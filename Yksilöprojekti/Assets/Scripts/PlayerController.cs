@@ -17,6 +17,13 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovePlayer();
-
+        
     }
 
     private void MovePlayer()
@@ -38,11 +45,15 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
 
+            //audioManager.PlaySFX(audioManager.Walking);
+
             spriteRenderer.flipX = true;
         }
         else if (Input.GetKeyDown(right))
         {
             rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
+
+            //audioManager.PlaySFX(audioManager.Walking);
 
             spriteRenderer.flipX = false;
         }

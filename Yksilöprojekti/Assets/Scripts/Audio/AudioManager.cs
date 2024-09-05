@@ -1,43 +1,28 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    [Header("Audio Source")]
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
 
-    public Sound[] sounds;
+    [Header("Audio Clip")]
 
-    void Awake()
+    public AudioClip Background;
+    //public AudioClip Walking;
+    public AudioClip PickUpObjectsSound;
+    public AudioClip Death;
+
+    private void Start()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-        }
+        musicSource.clip = Background;
+        musicSource.Play();
     }
 
-    public void Play(string sound)
+    public void PlaySFX(AudioClip clip)
     {
-        Sound s = Array.Find(sounds, item => item.name == sound);
-        s.source.Play();
-    }
-    public void Stop(string sound)
-    {
-        Sound s = Array.Find(sounds, item => item.name == sound);
-        s.source.Stop();
+        SFXSource.PlayOneShot(clip);
     }
 }
