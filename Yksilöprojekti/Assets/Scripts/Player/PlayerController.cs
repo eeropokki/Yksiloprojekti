@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.Android.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,15 +17,24 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 400;
     public float jumpForce = 5;
+    public int numberOfJumps = 0;
     bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
     private void Awake()
     {
+        // Check wether the rigidbody is valid on awake
+        if (playerRb == null)
+        {
+            Debug.Log("Rigidbody for player controller: "+ gameObject + " was destroyed");
+        }
+        else
+            Debug.Log("Rigidbody for player controller: " + gameObject);
 
         
-        controls = new PlayerControls();
+        if(controls == null)
+            controls = new PlayerControls();
         controls.Enable();
 
         controls.Land.Move.performed += context =>
@@ -32,7 +43,7 @@ public class PlayerController : MonoBehaviour
         };
 
         controls.Land.Jump.performed += context => Jump();
-        
+
     } 
 
     // Update is called once per frame
@@ -46,7 +57,29 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("Player Jump");
-        playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+        if (isGrounded)
+        {
+            numberOfJumps = 0;
+            // Skip performed problem
+            if(playerRb != null)
+                playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+            numberOfJumps++;
+        }
+        else 
+        {
+            if (numberOfJumps == 1)
+            {
+                if (playerRb != null)
+                    playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+                numberOfJumps++;
+            }
+        }
+        
+    }
+
+    void OnDisable()
+    {
+        Debug.Log("Disabling event");
+        controls.Land.Jump.performed -= context => Jump();
     }
 }

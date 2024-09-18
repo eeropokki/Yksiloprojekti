@@ -37,39 +37,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "311dac1a-8b13-4e9e-bde6-5a2d793b9033",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "09419291-e6cd-453d-9a94-812ab5ded13c",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "72097fd7-5f35-407d-b86a-38034344a665",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "1D Axis AD",
                     "id": "62327604-ec2a-4525-9890-3dcc018e3185",
                     "path": "1DAxis",
@@ -103,6 +70,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "5882deb8-74b3-4403-be39-807dbe5996ef",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "b15ae1fd-635c-4322-bf89-b83058114fe6",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "ff441ee9-8da1-48db-b47f-a845d84a9fdc",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "3dba1a36-9234-45b6-b6b0-70bdd50da8f5",
                     "path": "<Keyboard>/w",
@@ -115,7 +115,7 @@
                 },
                 {
                     "name": "",
-                    "id": "0c305013-f9e5-479a-925b-6b112c84010a",
+                    "id": "cb0b39d0-13fa-4c0c-bd27-d8a89f7d570f",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "Press",
                     "processors": "",

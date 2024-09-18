@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 10;
     public int health;
 
-    AudioManager audioManager;
+    //AudioManager audioManager;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            audioManager.PlaySFX(audioManager.Death);
+            //audioManager.PlaySFX(audioManager.Death);
             Destroy(gameObject);
         }
     }

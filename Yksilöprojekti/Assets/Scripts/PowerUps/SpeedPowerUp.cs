@@ -10,8 +10,8 @@ public class SpeedPowerUp : MonoBehaviour
     [SerializeField]
     private Vector2 initialVelocity;
 
-    private Rigidbody2D rigidbody2D;
-    private Collider2D collider2D;
+    private new Rigidbody2D rigidbody2D;
+    private new Collider2D collider2D;
 
     [SerializeField]
     private float reenableColliderAfter;
@@ -37,6 +37,8 @@ public class SpeedPowerUp : MonoBehaviour
         if (player != null)
         {
             Destroy(gameObject);
+
+            // lis‰‰ nopeutta
         }
     }
 }

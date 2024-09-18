@@ -9,8 +9,10 @@ public class HealthPowerUp : MonoBehaviour
         [SerializeField]
         private Vector2 initialVelocity;
 
-        private Rigidbody2D rigidbody2D;
-        private Collider2D collider2D;
+        //PlayerHealth playerHealth = new PlayerHealth();
+
+        private new Rigidbody2D rigidbody2D;
+        private new Collider2D collider2D;
 
         [SerializeField]
         private float reenableColliderAfter;
@@ -35,7 +37,11 @@ public class HealthPowerUp : MonoBehaviour
             var player = other.collider.GetComponent<PlayerController>();
             if (player != null)
             {
+
                 Destroy(gameObject);
+
+            // lis‰‰ healthia
+            
             }
         }
 }

@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PickUpObjects : MonoBehaviour
 {
-    AudioManager audioManager;
+    //AudioManager audioManager;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            audioManager.PlaySFX(audioManager.PickUpObjectsSound);
+            //audioManager.PlaySFX(audioManager.PickUpObjectsSound);
             Destroy(gameObject);
         }
     }
