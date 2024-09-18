@@ -365,7 +365,8 @@ GameObject:
   - component: {fileID: 1590428928}
   - component: {fileID: 1590428931}
   - component: {fileID: 1590428930}
-  m_Layer: 0
+  - component: {fileID: 1590428932}
+  m_Layer: 6
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,6 +512,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34375, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1590428932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590428927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d7460d3b9a13d46ab54e0178aaeac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
