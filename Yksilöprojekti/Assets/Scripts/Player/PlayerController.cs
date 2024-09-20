@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
 
     PlayerControls controls;
-    
+    public Animator playerAnimator;
     
     float direction = 0;
 
@@ -52,7 +52,8 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
         Debug.Log(isGrounded);
         playerRb.velocity = new Vector2(direction * speed * Time.fixedDeltaTime, playerRb.velocity.y);
-        
+
+        playerAnimator.SetFloat("Speed", direction);
     }
 
     private void Jump()
