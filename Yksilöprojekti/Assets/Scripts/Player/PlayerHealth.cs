@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         {
             //audioManager.PlaySFX(audioManager.Death);
             Destroy(gameObject);
+            SceneManager.LoadScene("Menu");
         }
     }
 }
